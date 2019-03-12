@@ -1,15 +1,24 @@
-#define m1 0
-#define m2 3
+#define rm 0
+#define lm 3
 #include <kipr/botball.h>
 int forward(int power, int time)    //percent power, time in milliseconds
 {
-  motor(m1, power);
-  motor(m2, power);
+  motor(lm, power);
+  motor(rm, power);
   msleep(time);
   return 0;
 }
+int right(int power, int time)      //percent power, time in milliseconds
+{
+  motor(lm, power);
+  msleep(time);
+  return 0;
+}
+
 int main()
 {
+  forward(100,1000);
+  right(100, 1000);
   forward(100,1000);
   return 0;
 }
